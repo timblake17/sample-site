@@ -10,7 +10,7 @@ import data from './data.json';
       <div>
         <ul>
           <div>
-            <input type="radio" id="red" name="tabs" checked="checked" />
+            <input type="radio" checked="checked" />
 						<label>Movies</label>
 					</div>
 					<div>
@@ -20,24 +20,27 @@ import data from './data.json';
 					<div>
 						<a href="#">Clear filters</a>
 					</div>
-            <button id= "button" type="button" onclick="books(props)">button</button>
+          <h2>Movies</h2>
+          {
+             data.media.map(function(movie){
+               if (movie.type.includes('movie')) {
+               return <li>{movie.year} - {movie.title}-{movie.genre}
+                 <img src={movie.poster} alt="" />
+               </li>;
+               }
+           })
+          }
+          <h2>Books</h2>
+          {
 
-
-
-     {
-
-
-
-       function books(props){data.media.map(function(movie){
-         alert('hi')
-         if (movie.type.includes('book')) {
-         return <li>{movie.year} - {movie.title}-{movie.genre}
-           <img src={movie.poster} alt="" />
-         </li>;
-       }
-       })
-     }
-     }
+        data.media.map(function(movie){
+          if (movie.type.includes('book')) {
+          return <li>{movie.year} - {movie.title}-{movie.genre}
+            <img src={movie.poster} alt="" />
+          </li>;
+        }
+        })
+      }
 
      </ul>
   </div>
