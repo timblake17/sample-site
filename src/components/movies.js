@@ -2,12 +2,20 @@ import React, { Component } from 'react';
 import data from './data.json';
 
 
-  const Movies = (props) => {
+class Movies extends React.Component  {
+  constructor(){
+    super();
 
+    ///get initial state
+    this.state = {
+      show: 'movies'
+    };
+  }
+  render() {
     return (
       <div>
 
-        <input type="radio" name="movies" value="" />
+        <input type="radio" onClick= "#" name="movies" value="" />
         <label>Movies</label>
         <input type="radio" name="books" value="" />
         <label>Books</label>
@@ -35,5 +43,6 @@ import data from './data.json';
     </div>
     )
   }
+}
 
   export default Movies;
