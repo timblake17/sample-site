@@ -51,7 +51,7 @@ class Movies extends React.Component  {
         this.clearFilters(e)
       }
     }
-    
+
   handleCheckboxAnimation(e){
     if (e.target.checked){
       this.setState({genre:'animation'});}
@@ -93,55 +93,24 @@ class Movies extends React.Component  {
             data.media.map(movie=>{
             if (movie.type.includes('book') && this.state.show ==='books') {
             return <li key={movie.title}>{movie.title}-{movie.year}
-              <img src={movie.poster} alt="" />
-              </li>
+              <img src={movie.poster} alt="" /></li>
+            }else if (movie.type.includes('movie') && this.state.show ==='movies') {
+              return <li key={movie.title}>{movie.title}-{movie.year}
+              <img src={movie.poster} alt="" /></li>
+            }else if (movie.genre.includes('action') && this.state.genre ==='action') {
+              return <li key={movie.title}>{movie.title}-{movie.year}
+              <img src={movie.poster} alt="" /></li>
+            }else if (movie.genre.includes('comedy') && this.state.genre ==='comedy') {
+              return <li key={movie.title}>{movie.title}-{movie.year}
+              <img src={movie.poster} alt="" /></li>
+            }else if (movie.genre.includes('animation') && this.state.genre ==='animation') {
+              return <li key={movie.title}>{movie.title}-{movie.year}
+              <img src={movie.poster} alt="" /></li>
+            }else if(movie.genre.includes('adventure') && this.state.genre ==='adventure') {
+              return <li key={movie.title}>{movie.title}-{movie.year}
+              <img src={movie.poster} alt="" /></li>
             }
            })
-          }
-          {
-            data.media.map(movie=>{
-            if (movie.type.includes('movie') && this.state.show ==='movies') {
-            return <li key={movie.title}>{movie.title}-{movie.year}
-              <img src={movie.poster} alt="" />
-              </li>
-            }
-          })
-          }
-          {
-            data.media.map(movie=>{
-            if (movie.genre.includes('action') && this.state.genre ==='action') {
-            return <li key={movie.title}>{movie.title}-{movie.year}
-              <img src={movie.poster} alt="" />
-              </li>
-            }
-          })
-          }
-          {
-            data.media.map(movie=>{
-            if (movie.genre.includes('comedy') && this.state.genre ==='comedy') {
-            return <li key={movie.title}>{movie.title}-{movie.year}
-              <img src={movie.poster} alt="" />
-              </li>
-            }
-          })
-          }
-          {
-            data.media.map(movie=>{
-            if (movie.genre.includes('animation') && this.state.genre ==='animation') {
-            return <li key={movie.title}>{movie.title}-{movie.year}
-              <img src={movie.poster} alt="" />
-              </li>
-            }
-          })
-          }
-          {
-            data.media.map(movie=>{
-            if (movie.genre.includes('adventure') && this.state.genre ==='adventure') {
-            return <li key={movie.title}>{movie.title}-{movie.year}
-              <img src={movie.poster} alt="" />
-              </li>
-            }
-          })
           }
       </ul>
     </div>
