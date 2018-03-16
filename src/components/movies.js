@@ -13,93 +13,82 @@ class Movies extends React.Component  {
       genre:'',
 
   };
-
-  }
-
-  filterBooks() {
-    this.setState({show:'books'})
-
-  }
-
-  filterMovies() {
-    this.setState({show:'movies'})
-  }
-
-  filterAction() {
-    this.setState({genre:'action'})
-  }
-
-  filterComedy() {
-    this.setState({genre:'comedy'})
-  }
-
-  filterAnimation() {
-    this.setState({genre:'animation'})
-  }
-
-  filterAdventure() {
-    this.setState({genre:'adventure'})
-
   }
 
   clearFilters() {
     this.setState({show:''})
     this.setState({genre:''})
-    document.getElementsByTagName("input").checked = false;
-
   }
-
-
 
   handleCheckboxBooks(e){
     if (e.target.checked){
-      this.filterBooks(e);}
+      this.setState({show:'books'});}
       else{
         this.clearFilters(e)
       }
     }
 
-    handleCheckboxMovies(e){
-      if (e.target.checked){
-        this.filterMovies(e);}
-        else{
-          this.clearFilters(e)
-        }
+  handleCheckboxMovies(e){
+    if (e.target.checked){
+      this.setState({show:'movies'});}
+      else{
+        this.clearFilters(e)
       }
+    }
 
+  handleCheckboxAction(e){
+    if (e.target.checked){
+      this.setState({genre:'action'});}
+      else{
+        this.clearFilters(e)
+      }
+    }
 
+  handleCheckboxComedy(e){
+    if (e.target.checked){
+      this.setState({genre:'comedy'});}
+      else{
+        this.clearFilters(e)
+      }
+    }
+    
+  handleCheckboxAnimation(e){
+    if (e.target.checked){
+      this.setState({genre:'animation'});}
+      else{
+        this.clearFilters(e)
+      }
+    }
+
+  handleCheckboxAdventure(e){
+    if (e.target.checked){
+      this.setState({genre:'adventure'});}
+      else{
+        this.clearFilters(e)
+      }
+    }
 
   render() {
     return (
       <div>
         <div>
-          <label><input type="Checkbox" name="book" value="" onChange={(e) => this.handleCheckboxBooks(e)} />
+          <label><input id="checkboxId" type="Checkbox" name="book" value="" onChange={(e) => this.handleCheckboxBooks(e)} />
           Books</label>
-          <label><input type="Checkbox" name="movies" value="" onClick={(e) => this.handleCheckboxMovies(e)}/>
+          <label><input id="checkboxId" type="Checkbox" name="movies" value="" onClick={(e) => this.handleCheckboxMovies(e)}/>
           Movies</label>
         </div>
-
-        <button onClick={this.handleClick}>
-               {this.state.isToggleOn ? <input type="Checkbox" name="movies" value="" onClick={(e) => this.filterMovies(e)}/> : 'OFF'}
-             </button>
-
-
-
-
+        <button onClick={(e) => this.clearFilters(e)} type="button">Clear Filters</button>
         <div>
-          <input type="Checkbox" name="Action" value="" onClick={(e) => this.filterAction(e)} />
+          <input type="Checkbox" name="Action" value="" onClick={(e) => this.handleCheckboxAction(e)} />
           <label>Action</label>
-           <input type="Checkbox" name="Comedy" value="" onClick={(e) => this.filterComedy(e)}/>
+           <input type="Checkbox" name="Comedy" value="" onClick={(e) => this.handleCheckboxComedy(e)}/>
           <label>Comedy</label>
-           <input type="Checkbox" name="Animation" value="" onClick={(e) => this.filterAnimation(e)} />
+          <input type="Checkbox" name="Animation" value="" onClick={(e) => this.handleCheckboxAnimation(e)} />
           <label>Animation</label>
-          <input type="Checkbox" name="Adventure" value="" onClick={(e) => this.filterMovies(e)}/>
+          <input type="Checkbox" name="Adventure" value="" onClick={(e) => this.handleCheckboxAdventure(e)}/>
           <label>Adventure</label>
         </div>
-
-
-
-        <ul>
+          <ul>
           {
             data.media.map(movie=>{
             if (movie.type.includes('book') && this.state.show ==='books') {
@@ -154,9 +143,6 @@ class Movies extends React.Component  {
             }
           })
           }
-
-
-
       </ul>
     </div>
     )
