@@ -10,13 +10,15 @@ class Movies extends React.Component  {
 
     this.state = {
       show:'',
-      genre:''
+      genre:'',
 
   };
+
   }
 
   filterBooks() {
     this.setState({show:'books'})
+
   }
 
   filterMovies() {
@@ -43,9 +45,27 @@ class Movies extends React.Component  {
   clearFilters() {
     this.setState({show:''})
     this.setState({genre:''})
+    document.getElementsByTagName("input").checked = false;
+
   }
 
 
+
+  handleCheckboxBooks(e){
+    if (e.target.checked){
+      this.filterBooks(e);}
+      else{
+        this.clearFilters(e)
+      }
+    }
+
+    handleCheckboxMovies(e){
+      if (e.target.checked){
+        this.filterMovies(e);}
+        else{
+          this.clearFilters(e)
+        }
+      }
 
 
 
@@ -53,15 +73,19 @@ class Movies extends React.Component  {
     return (
       <div>
         <div>
-          <input type="Checkbox" name="book" value="" onChange={(e) => this.filterBooks(e)} />
-          <label>Books</label>
-          <input type="Checkbox" name="movies" value="" onClick={(e) => this.filterMovies(e)}/>
-          <label>Movies</label>
+          <label><input type="Checkbox" name="book" value="" onChange={(e) => this.handleCheckboxBooks(e)} />
+          Books</label>
+          <label><input type="Checkbox" name="movies" value="" onClick={(e) => this.handleCheckboxMovies(e)}/>
+          Movies</label>
         </div>
-        <div>
-          <input type="Checkbox" name="movies" value="" onClick={(e) => this.clearFilters(e)}/>
-          <label>Clear Filters</label>
-        </div>
+
+        <button onClick={this.handleClick}>
+               {this.state.isToggleOn ? <input type="Checkbox" name="movies" value="" onClick={(e) => this.filterMovies(e)}/> : 'OFF'}
+             </button>
+
+
+
+
         <div>
           <input type="Checkbox" name="Action" value="" onClick={(e) => this.filterAction(e)} />
           <label>Action</label>
