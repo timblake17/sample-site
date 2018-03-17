@@ -15,32 +15,31 @@ class Movies extends React.Component  {
   };
   }
 
-
-  addBooks(e){
-    if(e.target.checked){
-    this.setState({
-      show: [...this.state.show, 'books']})
-    }else{
-      var index = this.state.show.indexOf('books');
-      if (index > -1) {
-      this.state.show.splice(index, 1);
-      this.setState({
-        show: [...this.state.show,]})
-      }
-    }
-  }
-
-
-addMovies(e){
+addType(e, title){
   if(e.target.checked){
   this.setState({
-    show: [...this.state.show, 'movies']})
+    show: [...this.state.show, title]})
   }else{
-    var index = this.state.show.indexOf('movies');
+    var index = this.state.show.indexOf(title);
     if (index > -1) {
     this.state.show.splice(index, 1);
     this.setState({
       show: [...this.state.show,]})
+    }
+
+  }
+}
+
+addGenre(e, title){
+  if(e.target.checked){
+  this.setState({
+    show: [...this.state.genre, title]})
+  }else{
+    var index = this.state.genre.indexOf(title);
+    if (index > -1) {
+    this.state.genre.splice(index, 1);
+    this.setState({
+      show: [...this.state.genre,]})
     }
 
   }
@@ -52,32 +51,20 @@ clearFilters() {
   this.setState({genre:''})
 }
 
-
-
-// handleCheckboxAdventure(e){
-//   if (e.target.checked){
-//     this.setState({genre:'adventure'});}
-//     else{
-//       this.clearFilters(e)
-//     }
-//   }
-
-
-
-
-
   render() {
     return (
       <div>
         <div>
-          <label><input id="books" type="Checkbox" name="book" value="" onChange={(e) => this.addBooks(e)} />
+          <label><input id="books" type="Checkbox" name="book" value="" onClick={(e) => this.addType(e,'books')} />
           Books</label>
-          <label><input id="checkboxId" type="Checkbox" name="movies" value="" onClick={(e) => this.addMovies(e)}/>
+          <label><input id="checkboxId" type="Checkbox" name="movies" value="" onClick={(e) => this.addType(e,'movies')}/>
           Movies</label>
+
+
         </div>
         <button onClick={(e) => this.clearFilters(e)} type="button">Clear Filters</button>
         <div>
-          <input type="Checkbox" name="Action" value="" onClick={(e) => this.handleCheckboxAction(e)} />
+          <input type="Checkbox" name="Action" value="" onClick={(e) => this.addGenre(e,'action')} />
           <label>Action</label>
            <input type="Checkbox" name="Comedy" value="" onClick={(e) => this.handleCheckboxComedy(e)}/>
           <label>Comedy</label>
@@ -95,7 +82,7 @@ clearFilters() {
             }else if (movie.type.includes('movie') && this.state.show.includes ('movies')) {
               return <li key={movie.title}>{movie.title}-{movie.year}
               <img src={movie.poster} alt="" /></li>
-            }else if (movie.genre.includes('action') && this.state.genre ==='action') {
+            }else if (movie.genre.includes('action') && this.state.genre.includes ('action')) {
               return <li key={movie.title}>{movie.title}-{movie.year}
               <img src={movie.poster} alt="" /></li>
             }else if (movie.genre.includes('comedy') && this.state.genre ==='comedy') {
