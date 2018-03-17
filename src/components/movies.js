@@ -9,72 +9,70 @@ class Movies extends React.Component  {
     super();
 
     this.state = {
-      show:'',
-      genre:'',
+      show:[],
+      genre:[]
 
   };
   }
 
-  clearFilters() {
-    this.setState({show:''})
-    this.setState({genre:''})
+
+  addBooks(e){
+    if(e.target.checked){
+    this.setState({
+      show: [...this.state.show, 'books']})
+    }else{
+      var index = this.state.show.indexOf('books');
+      if (index > -1) {
+      this.state.show.splice(index, 1);
+      this.setState({
+        show: [...this.state.show,]})
+      }
+    }
   }
 
-  handleCheckboxBooks(e){
-    if (e.target.checked){
-      this.setState({show:'books'});}
-      else{
-        this.clearFilters(e)
-      }
+
+addMovies(e){
+  if(e.target.checked){
+  this.setState({
+    show: [...this.state.show, 'movies']})
+  }else{
+    var index = this.state.show.indexOf('movies');
+    if (index > -1) {
+    this.state.show.splice(index, 1);
+    this.setState({
+      show: [...this.state.show,]})
     }
 
-  handleCheckboxMovies(e){
-    if (e.target.checked){
-      this.setState({show:'movies'});}
-      else{
-        this.clearFilters(e)
-      }
-    }
+  }
+}
 
-  handleCheckboxAction(e){
-    if (e.target.checked){
-      this.setState({genre:'action'});}
-      else{
-        this.clearFilters(e)
-      }
-    }
 
-  handleCheckboxComedy(e){
-    if (e.target.checked){
-      this.setState({genre:'comedy'});}
-      else{
-        this.clearFilters(e)
-      }
-    }
+clearFilters() {
+  this.setState({show:''})
+  this.setState({genre:''})
+}
 
-  handleCheckboxAnimation(e){
-    if (e.target.checked){
-      this.setState({genre:'animation'});}
-      else{
-        this.clearFilters(e)
-      }
-    }
 
-  handleCheckboxAdventure(e){
-    if (e.target.checked){
-      this.setState({genre:'adventure'});}
-      else{
-        this.clearFilters(e)
-      }
-    }
+
+// handleCheckboxAdventure(e){
+//   if (e.target.checked){
+//     this.setState({genre:'adventure'});}
+//     else{
+//       this.clearFilters(e)
+//     }
+//   }
+
+
+
+
 
   render() {
     return (
       <div>
         <div>
-          <label><input id="checkboxId" type="Checkbox" name="book" value="" onChange={(e) => this.handleCheckboxBooks(e)} />
+          <label><input id="books" type="Checkbox" name="book" value="" onChange={(e) => this.addBooks(e)} />
           Books</label>
-          <label><input id="checkboxId" type="Checkbox" name="movies" value="" onClick={(e) => this.handleCheckboxMovies(e)}/>
+          <label><input id="checkboxId" type="Checkbox" name="movies" value="" onClick={(e) => this.addMovies(e)}/>
           Movies</label>
         </div>
         <button onClick={(e) => this.clearFilters(e)} type="button">Clear Filters</button>
@@ -91,10 +89,10 @@ class Movies extends React.Component  {
           <ul>
           {
             data.media.map(movie=>{
-            if (movie.type.includes('book') && this.state.show ==='books') {
+            if (movie.type.includes('book') && this.state.show.includes ('books')) {
             return <li key={movie.title}>{movie.title}-{movie.year}
               <img src={movie.poster} alt="" /></li>
-            }else if (movie.type.includes('movie') && this.state.show ==='movies') {
+            }else if (movie.type.includes('movie') && this.state.show.includes ('movies')) {
               return <li key={movie.title}>{movie.title}-{movie.year}
               <img src={movie.poster} alt="" /></li>
             }else if (movie.genre.includes('action') && this.state.genre ==='action') {
