@@ -77,23 +77,23 @@ clearFilters() {
           {
             data.media.map(movie=>{
             if (movie.type.includes('book') && this.state.show.includes ('books')) {
-            return <li key={movie.title}>{movie.title}-{movie.year}
-              <img src={movie.poster} alt="" /></li>
+            return <li key={movie.title}>{movie.title}-{movie.year} 
+              <img src={movie.poster} alt="" />Book</li>
             }else if (movie.type.includes('movie') && this.state.show.includes ('movies')) {
               return <li key={movie.title}>{movie.title}-{movie.year}
-              <img src={movie.poster} alt="" /></li>
+              <img src={movie.poster} alt="" />Movie</li>
             }else if (movie.genre.includes('action') && this.state.genre.includes ('action')) {
               return <li key={movie.title}>{movie.title}-{movie.year}
-              <img src={movie.poster} alt="" /></li>
+              <img src={movie.poster} alt="" />Action</li>
             }else if (movie.genre.includes('comedy') && this.state.genre.includes('comedy')) {
               return <li key={movie.title}>{movie.title}-{movie.year}
-              <img src={movie.poster} alt="" /></li>
+              <img src={movie.poster} alt="" />Comedy</li>
             }else if (movie.genre.includes('animation') && this.state.genre.includes('animation')) {
               return <li key={movie.title}>{movie.title}-{movie.year}
-              <img src={movie.poster} alt="" /></li>
+              <img src={movie.poster} alt="" />Animation</li>
             }else if(movie.genre.includes('adventure') && this.state.genre.includes('adventure')) {
               return <li key={movie.title}>{movie.title}-{movie.year}
-              <img src={movie.poster} alt="" /></li>
+              <img src={movie.poster} alt="" />Adventure</li>
             }
            })
           }

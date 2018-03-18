@@ -1,55 +1,39 @@
 import React, { Component } from 'react';
-const joke = +1;
+import axios from 'axios';
 
-let urlForUsername= username =>
-"http://api.icndb.com/jokes/random"
-//
-// getElementById('next').on(click, function(
-//   joke= joke+=1
-// ))
 
-class Chuck extends Component {
-  constructor(props){
-    super(props)
+
+class Chuck2 extends React.Component {
+  constructor(props) {
+    super(props);
     this.state = {
-      requestFailed: false
-    }
-  }
-  componentDidMount(){
-    fetch(urlForUsername(this.props.username))
-      .then(response=> {
-        if(!response.ok){
-          throw Error("Network Request Failed")
-        }
-        return response
-      })
-      .then(d => d.json())
-      .then(d =>{
-        this.setState({
-          githubData: d
-        })
-      }, () => {
-        this.setState({
-          requestFailed:true
-        })
-      })
+      fact: 'Chuck Norris can text using his walkie talkie and without batteries.'
+    };
+    this.getFact = this.getFact.bind(this);
   }
 
+  getFact() {
+  axios.get('https://api.chucknorris.io/jokes/random')
+    .then(response => {
+    this.setState({fact: response.data.value});
+  }).catch(error => {
+    console.log(error);
+  });
+}
 
-
-
-  render(){
-    if(this.state.requestFailed) return <p>Failed</p>
-
-    if(!this.state.githubData) return <p>Loading...</p>
+  render() {
     return(
-      <div>
-
-        <button type="button" id="next" >Next Joke</button>
-        <h2>{this.state.githubData.value.joke}</h2>
+      <div className="container text-center">
+        <h1>Chuck Norris Facts</h1>
+        <h3>{'"' + this.state.fact + '"'}</h3>
+        <button type="button"
+          onClick={this.getFact}
+          className="btn btn-primary">
+          More Chuck Facts!
+        </button>
       </div>
-    )
+    );
   }
 }
 
-export default Chuck;
+export default Chuck2
