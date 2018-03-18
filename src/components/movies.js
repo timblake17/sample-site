@@ -33,13 +33,13 @@ addType(e, title){
 addGenre(e, title){
   if(e.target.checked){
   this.setState({
-    show: [...this.state.genre, title]})
+    genre: [...this.state.genre, title]})
   }else{
     var index = this.state.genre.indexOf(title);
     if (index > -1) {
     this.state.genre.splice(index, 1);
     this.setState({
-      show: [...this.state.genre,]})
+      genre: [...this.state.genre,]})
     }
 
   }
@@ -66,11 +66,11 @@ clearFilters() {
         <div>
           <input type="Checkbox" name="Action" value="" onClick={(e) => this.addGenre(e,'action')} />
           <label>Action</label>
-           <input type="Checkbox" name="Comedy" value="" onClick={(e) => this.handleCheckboxComedy(e)}/>
+           <input type="Checkbox" name="Comedy" value="" onClick={(e) => this.addGenre(e,'comedy')}/>
           <label>Comedy</label>
-          <input type="Checkbox" name="Animation" value="" onClick={(e) => this.handleCheckboxAnimation(e)} />
+          <input type="Checkbox" name="Animation" value="" onClick={(e) => this.addGenre(e,'animation')} />
           <label>Animation</label>
-          <input type="Checkbox" name="Adventure" value="" onClick={(e) => this.handleCheckboxAdventure(e)}/>
+          <input type="Checkbox" name="Adventure" value="" onClick={(e) => this.addGenre(e,'adventure')}/>
           <label>Adventure</label>
         </div>
           <ul>
@@ -85,13 +85,13 @@ clearFilters() {
             }else if (movie.genre.includes('action') && this.state.genre.includes ('action')) {
               return <li key={movie.title}>{movie.title}-{movie.year}
               <img src={movie.poster} alt="" /></li>
-            }else if (movie.genre.includes('comedy') && this.state.genre ==='comedy') {
+            }else if (movie.genre.includes('comedy') && this.state.genre.includes('comedy')) {
               return <li key={movie.title}>{movie.title}-{movie.year}
               <img src={movie.poster} alt="" /></li>
-            }else if (movie.genre.includes('animation') && this.state.genre ==='animation') {
+            }else if (movie.genre.includes('animation') && this.state.genre.includes('animation')) {
               return <li key={movie.title}>{movie.title}-{movie.year}
               <img src={movie.poster} alt="" /></li>
-            }else if(movie.genre.includes('adventure') && this.state.genre ==='adventure') {
+            }else if(movie.genre.includes('adventure') && this.state.genre.includes('adventure')) {
               return <li key={movie.title}>{movie.title}-{movie.year}
               <img src={movie.poster} alt="" /></li>
             }
