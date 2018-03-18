@@ -9,7 +9,6 @@ class Chuck2 extends React.Component {
     this.state = {
       fact: 'Chuck Norris can text using his walkie talkie and without batteries.'
     };
-    this.getFact = this.getFact.bind(this);
   }
 
   getFact() {
@@ -27,7 +26,7 @@ class Chuck2 extends React.Component {
         <h1>Chuck Norris Facts</h1>
         <h3>{'"' + this.state.fact + '"'}</h3>
         <button type="button"
-          onClick={this.getFact}
+          onClick={(e) => this.getFact(e)}
           className="btn btn-primary">
           More Chuck Facts!
         </button>

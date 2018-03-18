@@ -7,6 +7,8 @@ import GitHub from './components/github';
 import Chuck from './components/chuck';
 import Movies from './components/movies';
 import data from './components/data.json';
+import Header from './components/header';
+
 
 
 
@@ -16,26 +18,24 @@ class App extends Component {
 
     ///get initial state
     this.state = {
+
     };
   }
-
 
   render() {
     return (
       <div className="App">
-        <Block
-        />
+        <Header headerProp="Project Sample-Site"/>
         <Testimonial/>
-
-        <Block />
+        <Block titleProp="GitHub API" content="Pulling My Github Profile Data Using GitHubs API"/>
         <GitHub username="timblake17"/>
-        <Block />
+        <Block titleProp="Chuck Norris API" content="Pulling Chuck Norris Jokes from Chuck Norris API" />
 
         <Chuck />
-        <Block />
+        <Block titleProp="Movie Filter" content="Filtering Movies and Books with Genre Types Using a Json File"/>
 
 
-        <Movies />
+        <Movies  />
 
       </div>
     );

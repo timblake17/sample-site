@@ -37,6 +37,7 @@ class GitHub extends Component {
     if(!this.state.githubData) return <p>Loading...</p>
     return(
       <div>
+        <img src={this.state.githubData.avatar_url} alt="" />
         <h2>{this.state.githubData.name}</h2>
         <h2>{this.state.githubData.company}</h2>
         <h2>{this.state.githubData.bio}</h2>

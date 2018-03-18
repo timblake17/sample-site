@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import App from '../App.js';
-import './block.css'
-
 
 
 class Header extends React.Component {
@@ -13,9 +11,8 @@ class Header extends React.Component {
 
    render() {
       return (
-         <div className="block-container">
-            <h2>{this.props.titleProp}</h2>
-            <p>{this.props.content}</p>
+         <div>
+            <h1>{this.props.headerProp}</h1>
          </div>
       );
    }
