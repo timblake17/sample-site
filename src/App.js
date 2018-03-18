@@ -26,6 +26,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header headerProp="Project Sample-Site"/>
+        <Block titleProp="Testimonial block" content="Simple testimonial"/>
+
         <Testimonial/>
         <Block titleProp="GitHub API" content="Pulling My Github Profile Data Using GitHubs API"/>
         <GitHub username="timblake17"/>

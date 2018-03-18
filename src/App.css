@@ -1,28 +1,44 @@
 .App {
   text-align: center;
+  background-color: #5cdb95;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
+header{
+  background-color: #379683;
   padding: 20px;
   color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
+.chuck-norris-container{
+
 }
 
-.App-intro {
-  font-size: large;
+.chuck-norris-container img{
+  position: relative;
+  width: 600px;
+  height: auto;
+  top: 300px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.quote-container{
+  left: 52%;
+  position: relative;
+  height: 440px;
+  width: 44%;
+  background-repeat: no-repeat;
+  background-image: url(https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Speech-Bubble-PNG/Speech_Bubble_White_Blue_PNG_Clip_Art_Image.png?m=1507172110);
+  bottom: 410px;
+  }
+
+.quote-container h3{
+position: absolute;
+top: 30%;
+padding: 0 50px;
+
+}
+
+.chuck-norris-container button{
+  position: relative;
+    top: -110px;
+
 }

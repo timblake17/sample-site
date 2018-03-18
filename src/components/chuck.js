@@ -3,6 +3,8 @@ import axios from 'axios';
 
 
 
+
+
 class Chuck2 extends React.Component {
   constructor(props) {
     super(props);
@@ -19,12 +21,13 @@ class Chuck2 extends React.Component {
     console.log(error);
   });
 }
-
   render() {
     return(
-      <div className="container text-center">
-        <h1>Chuck Norris Facts</h1>
-        <h3>{'"' + this.state.fact + '"'}</h3>
+      <div className="chuck-norris-container">
+        <img src="http://rwrant.co.za/wp-content/uploads/2009/11/Chuck-Norris-1.jpg" alt="" />
+        <div className="quote-container">
+          <h3>{'"' + this.state.fact + '"'}</h3>
+        </div>
         <button type="button"
           onClick={(e) => this.getFact(e)}
           className="btn btn-primary">

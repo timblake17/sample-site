@@ -42,7 +42,6 @@ class GitHub extends Component {
         <h2>{this.state.githubData.company}</h2>
         <h2>{this.state.githubData.bio}</h2>
         <h2>{this.state.githubData.repos}</h2>
-        <a>{this.state.githubData.blog}</a>
       </div>
     )
   }
