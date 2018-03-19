@@ -49,27 +49,28 @@ addGenre(e, title){
 clearFilters() {
   this.setState({show:''})
   this.setState({genre:''})
-}
+  var x = document.getElementsByClassName("checkboxId");
+  for (var i = 0; i < x.length; i++) {
+      x[i].checked = false;;
+  }}
 
   render() {
     return (
       <div className="movies-books-container">
-        <div>
-          <label><input id="books" type="Checkbox" name="book" value="" onClick={(e) => this.addType(e,'books')} />
+        <div  >
+          <label><input ref="check" className="checkboxId" type="Checkbox" name="book" value="" onClick={(e) => this.addType(e,'books')} />
           Books</label>
-          <label><input id="checkboxId" type="Checkbox" name="movies" value="" onClick={(e) => this.addType(e,'movies')}/>
+          <label><input className="checkboxId" type="Checkbox" name="movies" value="" onClick={(e) => this.addType(e,'movies')}/>
           Movies</label>
-
-
         </div>
         <div>
-          <input type="Checkbox" name="Action" value="" onClick={(e) => this.addGenre(e,'action')} />
+          <input className="checkboxId" type="Checkbox" name="Action" value="" onClick={(e) => this.addGenre(e,'action')} />
           <label>Action</label>
-           <input type="Checkbox" name="Comedy" value="" onClick={(e) => this.addGenre(e,'comedy')}/>
+           <input className="checkboxId" type="Checkbox" name="Comedy" value="" onClick={(e) => this.addGenre(e,'comedy')}/>
           <label>Comedy</label>
-          <input type="Checkbox" name="Animation" value="" onClick={(e) => this.addGenre(e,'animation')} />
+          <input className="checkboxId"  type="Checkbox" name="Animation" value="" onClick={(e) => this.addGenre(e,'animation')} />
           <label>Animation</label>
-          <input type="Checkbox" name="Adventure" value="" onClick={(e) => this.addGenre(e,'adventure')}/>
+          <input className="checkboxId"  type="Checkbox" name="Adventure" value="" onClick={(e) => this.addGenre(e,'adventure')}/>
           <label>Adventure</label>
         </div>
         <button onClick={(e) => this.clearFilters(e)} type="button">Clear Filters</button>
