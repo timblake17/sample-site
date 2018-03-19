@@ -53,7 +53,7 @@ clearFilters() {
 
   render() {
     return (
-      <div>
+      <div className="movies-books-container">
         <div>
           <label><input id="books" type="Checkbox" name="book" value="" onClick={(e) => this.addType(e,'books')} />
           Books</label>
@@ -62,7 +62,6 @@ clearFilters() {
 
 
         </div>
-        <button onClick={(e) => this.clearFilters(e)} type="button">Clear Filters</button>
         <div>
           <input type="Checkbox" name="Action" value="" onClick={(e) => this.addGenre(e,'action')} />
           <label>Action</label>
@@ -73,11 +72,13 @@ clearFilters() {
           <input type="Checkbox" name="Adventure" value="" onClick={(e) => this.addGenre(e,'adventure')}/>
           <label>Adventure</label>
         </div>
+        <button onClick={(e) => this.clearFilters(e)} type="button">Clear Filters</button>
+
           <ul>
           {
             data.media.map(movie=>{
             if (movie.type.includes('book') && this.state.show.includes ('books')) {
-            return <li key={movie.title}>{movie.title}-{movie.year} 
+            return <li key={movie.title}>{movie.title}-{movie.year}
               <img src={movie.poster} alt="" />Book</li>
             }else if (movie.type.includes('movie') && this.state.show.includes ('movies')) {
               return <li key={movie.title}>{movie.title}-{movie.year}
