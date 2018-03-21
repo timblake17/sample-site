@@ -8,6 +8,8 @@ import Chuck from './components/chuck';
 import Movies from './components/movies';
 import data from './components/data.json';
 import Header from './components/header';
+import Furniture from './components/furniture';
+
 
 
 
@@ -25,7 +27,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header headerProp="Project Sample-Site"/>
+        {/* <Header headerProp="Project Sample-Site"/>
         <Block titleProp="Testimonial block" content="Simple testimonial"/>
 
         <Testimonial/>
@@ -33,11 +35,11 @@ class App extends Component {
         <GitHub username="timblake17"/>
         <Block titleProp="Chuck Norris API" content="Pulling Chuck Norris Jokes from Chuck Norris API" />
 
-        <Chuck />
-        <Block titleProp="Movie Filter" content="Filtering Movies and Books with Genre Types Using a Json File"/>
+        <Chuck /> */}
+        <Block titleProp="Furniture Filter" content="Filtering Furniture Items by Type Using a Json File That I Built Pulling Data From Wayfairs Website"/>
 
-
-        <Movies  />
+        <Furniture />
+        {/* <Movies  /> */}
 
       </div>
     );
