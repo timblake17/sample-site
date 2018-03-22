@@ -27,20 +27,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <Header headerProp="Project Sample-Site"/>
-        <Block titleProp="Testimonial block" content="Simple testimonial"/>
-
-        <Testimonial/>
         <Block titleProp="GitHub API" content="Pulling My Github Profile Data Using GitHubs API"/>
         <GitHub username="timblake17"/>
         <Block titleProp="Chuck Norris API" content="Pulling Chuck Norris Jokes from Chuck Norris API" />
-
-        <Chuck /> */}
+        <Chuck />
         <Block titleProp="Furniture Filter" content="Filtering Furniture Items by Type Using a Json File That I Built Pulling Data From Wayfairs Website"/>
-
         <Furniture />
-        {/* <Movies  /> */}
-
       </div>
     );
   }

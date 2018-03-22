@@ -127,7 +127,38 @@
       "link": "https://www.wayfair.com/furniture/pdp/zipcode-design-liam-barrel-chair-zipc2013.html",
       "img": "https://secure.img1-fg.wfcdn.com/im/21032112/resize-h800%5Ecompr-r85/4653/46536144/Liam+Barrel+Chair.jpg",
       "type": "chair"
+    },
+    {
+      "title": "Olson Accent Club Chair with Arms Upholstered Silver Nail Head",
+      "price": "$190.99",
+      "link": "https://www.wayfair.com/furniture/pdp/alcott-hill-olson-accent-club-chair-with-arms-upholstered-silver-nail-head-alct8431.html",
+      "img": "https://secure.img1-fg.wfcdn.com/im/24803996/resize-h800%5Ecompr-r85/3319/33197787/Olson+Accent+Club+Chair+with+Arms+Upholstered+Silver+Nail+Head.jpg",
+      "type": "featured"
+    },
+    {
+      "title": "Bischoptree Storage Trunk Coffee Table",
+      "price": "$122.98",
+      "link": "https://www.wayfair.com/furniture/pdp/charlton-home-bischoptree-storage-trunk-coffee-table-chlh2043.html",
+      "img": "https://secure.img1-fg.wfcdn.com/im/67757441/resize-h800%5Ecompr-r85/4206/42060503/Bischoptree+Storage+Trunk+Coffee+Table.jpg",
+      "type": "featured"
+    },
+    {
+      "title": "Munos Sleeper Sofa",
+      "price": "$194.99",
+      "link": "https://www.wayfair.com/furniture/pdp/ebern-designs-munos-sleeper-sofa-hrbd1088.html",
+      "img": "https://secure.img1-fg.wfcdn.com/im/26923332/resize-h800%5Ecompr-r85/4914/49146236/Munos+Sleeper+Sofa.jpg",
+      "type": "featured"
+    },
+    {
+      "title": "Gertrude Manual Wall Hugger Recliner",
+      "price": "$224.99",
+      "link": "https://www.wayfair.com/furniture/pdp/andover-mills-gertrude-manual-wall-hugger-recliner-ando3840.html?piid=17844773",
+      "img": "https://secure.img1-fg.wfcdn.com/im/05361819/resize-h800%5Ecompr-r85/2604/26040316/Gertrude+Manual+Wall+Hugger+Recliner.jpg",
+      "type": "featured"
     }
+
+
+
 
 	]
 }
